@@ -1,0 +1,148 @@
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #000;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* ---------- NAV BAR ---------- */
+.navbar {
+    height: 72px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 24px;
+    z-index: 20;
+}
+
+.nav-logo {
+    justify-self: center;
+    transform: translateY(5px);
+}
+
+.nav-logo img {
+    height: 60px;
+}
+
+.nav-right {
+    justify-self: end;
+}
+
+.hamburger {
+    width: 26px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 2px;
+    background: #fff;
+}
+
+/* ---------- MENU OVERLAY ---------- */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-overlay a {
+    font-size: 18px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-overlay a.inactive {
+    color: grey;
+    opacity: 0.4;
+}
+
+.menu-overlay a.inactive:hover {
+    color: #fff;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.menu-overlay a.active {
+    color: #fff;
+    opacity: 1;
+}
+
+.menu-overlay a.active:hover {
+    transform: scale(1.2);
+}
+
+/* ---------- 404 CONTENT ---------- */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.error-container h1 {
+    font-size: 120px;
+    margin-bottom: 24px;
+}
+
+.error-container p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    opacity: 0.8;
+}
+
+.error-container a {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 24px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.error-container a:hover {
+    background: #fff;
+    color: #000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        transform: none !important;
+    }
+}
